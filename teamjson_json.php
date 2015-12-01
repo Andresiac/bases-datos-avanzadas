@@ -1,7 +1,4 @@
 <?php
-
-
-
 //funcion para descomprimir archivo y sustituir char que sean necesarios
 function xmlToArray($xml, $options = array()) {
     $defaults = array(
