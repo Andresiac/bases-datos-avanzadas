@@ -13,6 +13,17 @@ function xmlToArray($xml, $options = array()) {
         'keyReplace' => false       
     );
 
+
+
+//get child nodes from all namespaces
+    $tagsArray = array();
+    foreach ($namespaces as $prefix => $namespace) {
+        foreach ($xml->children($namespace) as $childXml) {
+            //recurse into child nodes
+            $childArray = xmlToArray($childXml, $options);
+            list($childTagName, $childProperties) = each($childArray);
+
+
 ?>
 
 
