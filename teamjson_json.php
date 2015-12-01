@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 //funcion para descomprimir archivo y sustituir char que sean necesarios
 function xmlToArray($xml, $options = array()) {
     $defaults = array(
@@ -91,6 +92,16 @@ function xmlToArray($xml, $options = array()) {
         $xml->getName() => $propertiesArray
     );
 }
+=======
+
+
+$options = array_merge($defaults, $options);
+    $namespaces = $xml->getDocNamespaces();
+    $namespaces[''] = null;
+    $attributesArray = array();
+
+?>
+>>>>>>> 83b66758c08b0ae00a92179c5dfb139359424340
 
 
 
@@ -103,4 +114,14 @@ $arrayData = xmlToArray($xmlNode);
 echo json_encode($arrayData);
 
 
+<<<<<<< HEAD
 ?>
+=======
+	<h1>XML a JSON</h1>
+	<h2>Aun no convierte desde un archivo XML</h2>
+  <p>Perdone la espera</p>
+	
+	
+</body>
+</html>
+>>>>>>> 83b66758c08b0ae00a92179c5dfb139359424340
