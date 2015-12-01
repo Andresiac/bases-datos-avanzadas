@@ -14,7 +14,6 @@ function xmlToArray($xml, $options = array()) {
     );
 
 
-
 //get child nodes from all namespaces
     $tagsArray = array();
     foreach ($namespaces as $prefix => $namespace) {
@@ -22,13 +21,7 @@ function xmlToArray($xml, $options = array()) {
             //recurse into child nodes
             $childArray = xmlToArray($childXml, $options);
             list($childTagName, $childProperties) = each($childArray);
-
-
 ?>
-
-
-
-
 
 
 <!DOCTYPE html>
