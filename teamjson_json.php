@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 //funcion para descomprimir archivo y sustituir char que sean necesarios
 function xmlToArray($xml, $options = array()) {
     $defaults = array(
@@ -92,36 +92,40 @@ function xmlToArray($xml, $options = array()) {
         $xml->getName() => $propertiesArray
     );
 }
-=======
-
-
-$options = array_merge($defaults, $options);
-    $namespaces = $xml->getDocNamespaces();
-    $namespaces[''] = null;
-    $attributesArray = array();
-
-?>
->>>>>>> 83b66758c08b0ae00a92179c5dfb139359424340
 
 
 
 //leer archivo
-$xmlNode = simplexml_load_file('files/factura.xml');
+$xmlNode = simplexml_load_file('factura.xml');
 //lo manda a la funcion 
 $arrayData = xmlToArray($xmlNode);
 
-//imprime el array y lo codifica a json con la funcion "json_encode"
+
+//cadena json normal
+echo "<br/><br/><h3>Imprimiendo el json</h3><br/><br/>";
 echo json_encode($arrayData);
 
 
-<<<<<<< HEAD
+//cadena json impresa con pretty
+echo "<br/><br/><br/> <br/> <h3>Imprimiendo el json con formato</h3><br/><br/>";
+$data= json_encode($arrayData);                                                          
+echo json_encode($arrayData, JSON_PRETTY_PRINT);                                        
+                                                                                                                      
+//cadena de json con otro formato no sirve para el viewer ya que no tien formato de cadena json                       
+echo "<br/><br/><br/> <br/><h3> Imprimiendo el json con otro formato (esta cadena no sirve en json viewer ya que tiene otro formato, es decir lo decodifica y transforma a php en forma de array)</h3><br/><br/>";                       
+print_r(json_decode($data, true));                                                                                                                                             
 ?>
-=======
-	<h1>XML a JSON</h1>
-	<h2>Aun no convierte desde un archivo XML</h2>
-  <p>Perdone la espera</p>
-	
-	
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body background= "http://3.bp.blogspot.com/-OB_cw-HbCOw/UBbpNAcVOHI/AAAAAAAACKE/aGxqkO9Kirg/s1600/baby-blue-background-texture.jpg"
+    
 </body>
 </html>
->>>>>>> 83b66758c08b0ae00a92179c5dfb139359424340
+
+
